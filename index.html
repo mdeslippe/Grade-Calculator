@@ -1,0 +1,67 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="An easy to use grade calculator for students!">
+     <meta name="keywords" content="Grade Calculator, GPA, GPA Calculator">
+     <title>Grade Calculator</title>
+
+     <link rel="stylesheet" href="./css/styles.css">
+     <script src="./js/calculator.js"></script>
+ </head>
+ <body>
+     <nav>
+         <h1>Grade Calculator</h1>
+     </nav>
+     <main>
+        <form id="inputs">
+            <table id="values">
+                <tr>
+                    <th>Assignment Name</th>
+                    <th>Weight</th>
+                    <th>Grade</th>
+                </tr>
+                <tr id="row1">
+                    <td>
+                        <input type="text" name="name1" id="name1">
+                    </td>
+                    <td>
+                        <input type="number" name="weight1" id="weight1">
+                    </td>
+                    <td>
+                        <input type="number" name="grade1" id="grade1">
+                    </td>
+                </tr>
+                <tr id="row2">
+                    <td>
+                        <input type="text" name="name2" id="name2">
+                    </td>
+                    <td>
+                        <input type="number" name="weight2" id="weight2">
+                    </td>
+                    <td>
+                        <input type="number" name="grade2" id="grade2">
+                    </td>
+                </tr>
+                <tr id="row3" >
+                    <td>
+                        <input type="text" name="name3" id="name3">
+                    </td>
+                    <td>
+                        <input type="number" name="weight3" id="weight3">
+                    </td>
+                    <td>
+                        <input type="number" name="grade3" id="grade3">
+                    </td>
+                </tr>
+            </table>
+            <div id="buttons">
+                <input class="btn" onclick="addRow()" type="button" value="Add Row">
+                <button class="btn" onclick="calc()" type="submit">Calculate</button>
+                <button class="btn" type="reset">Reset</button>
+            </div>
+        </form>
+     </main>
+ </body>
+ </html>
