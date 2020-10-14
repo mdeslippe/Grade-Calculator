@@ -8,14 +8,21 @@ function calc() {
 
     let index = 1;
     let totalGrade = 0;
-
     let row = document.getElementById("row" + index);
 
     while(row) {
-
         let weight = (document.getElementById("weight" + index).value)/100;
         let grade = document.getElementById("grade" + index).value;
-        totalGrade = totalGrade + weight * grade
+
+        if(grade.match("[0-9]+\/[0-9]+")) {
+            let divisorIndex = grade.indexOf("/");
+            let numerator = parseFloat(grade.substr(0, divisorIndex));
+            let denominator = parseFloat(grade.substr(divisorIndex + 1, grade.length - 1));
+
+            totalGrade = totalGrade + weight * 100 * numerator / denominator;
+        } else if(grade.match("[0-9]+")) {
+            totalGrade = totalGrade + weight * grade;
+        }
 
         index = index + 1;
         row = document.getElementById("row" + index);
@@ -23,8 +30,6 @@ function calc() {
 
     alert("Your total grade is: " + totalGrade + "%");
 }
-
-
 
 function addRow() {
     
@@ -45,6 +50,6 @@ function addRow() {
     newRow.insertCell(2);
 
     table.rows[index].cells[0].innerHTML = `<input type="text" name="name${index}" id="name${index}">`;
-    table.rows[index].cells[1].innerHTML = `<input type="number" name="weight${index}" id="weight${index}">`;
-    table.rows[index].cells[2].innerHTML = `<input type="number" name="grade${index}" id="grade${index}">`;
+    table.rows[index].cells[1].innerHTML = `<input type="text" name="weight${index}" id="weight${index}">`;
+    table.rows[index].cells[2].innerHTML = `<input type="text" name="grade${index}" id="grade${index}">`;
 }
