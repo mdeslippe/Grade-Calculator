@@ -28,7 +28,7 @@ function calc() {
         row = document.getElementById("row" + index);
     }
 
-    alert("Your total grade is: " + totalGrade + "%");
+    totalGrade == NaN ? alert("Hmm.. there seems to be an error in your input. Please try again.") : alert("Your total grade is: " + totalGrade + "%");
 }
 
 function addRow() {
